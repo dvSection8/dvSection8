@@ -1,16 +1,27 @@
 PODS:
-  - dvSection8 (0.1.0)
+  - AsyncSwift (2.0.1)
+  - dvSection8 (1.0.0)
+  - JSONCodable (3.0.1)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
 
 DEPENDENCIES:
+  - AsyncSwift
   - dvSection8 (from `../`)
+  - JSONCodable (~> 3.0.1)
+  - SDWebImage (~> 4.0)
 
 EXTERNAL SOURCES:
   dvSection8:
     :path: ../
 
 SPEC CHECKSUMS:
-  dvSection8: 668eb0550455d103334410290bf1b902fd418069
+  AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
+  dvSection8: 16f49fd2f58897519c937d2d09e320c387bf8913
+  JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
 
-PODFILE CHECKSUM: 5e72cf6ffd96eb27d4f9e2f934333ecd3cc0a19f
+PODFILE CHECKSUM: c34ea2b1c772c9d82d7f1580d0555f8e185c0317
 
 COCOAPODS: 1.2.1

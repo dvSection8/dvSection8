@@ -1,11 +1,13 @@
+platform :ios, '9.0'
 use_frameworks!
 
 target 'dvSection8_Example' do
-  pod 'dvSection8', :path => 'https://github.com/dvSection8/dvSection8.git'
+  pod 'dvSection8', :path => '../'
+  pod 'JSONCodable', '~> 3.0.1'
+  pod 'AsyncSwift'
+  pod 'SDWebImage', '~> 4.0'
 
   target 'dvSection8_Tests' do
     inherit! :search_paths
-
-    
   end
 end

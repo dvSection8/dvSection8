@@ -1,9 +1,9 @@
 {
   "name": "dvSection8",
-  "version": "0.1.0",
-  "summary": "A short description of dvSection8.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/dvSection8/dvSection8",
+  "version": "1.0.0",
+  "summary": "dvSection8 is a boilerplate framework for the ios developer. This will be the kickstarter for using a standard codes to everyone.",
+  "description": "dvSection8 is a boilerplate framework for the ios developer. This will be the kickstarter for using a standard codes to everyone. This is also help to easily develop the app.",
+  "homepage": "https://github.com/dvSection8/dvSection8.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -13,10 +13,11 @@
   },
   "source": {
     "git": "https://github.com/dvSection8/dvSection8.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "dvSection8/Classes/**/*"
+  "source_files": "dvSection8/Classes/**/*",
+  "frameworks": "UIKit"
 }
