@@ -1,0 +1,6 @@
+framework module dvSection8 {
+  umbrella header "dvSection8-umbrella.h"
+
+  export *
+  module * { export * }
+}

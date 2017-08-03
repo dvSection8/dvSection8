@@ -1,0 +1,16 @@
+PODS:
+  - dvSection8 (0.1.0)
+
+DEPENDENCIES:
+  - dvSection8 (from `../`)
+
+EXTERNAL SOURCES:
+  dvSection8:
+    :path: ../
+
+SPEC CHECKSUMS:
+  dvSection8: 668eb0550455d103334410290bf1b902fd418069
+
+PODFILE CHECKSUM: 5e72cf6ffd96eb27d4f9e2f934333ecd3cc0a19f
+
+COCOAPODS: 1.2.1

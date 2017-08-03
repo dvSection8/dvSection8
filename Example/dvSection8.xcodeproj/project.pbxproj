@@ -28,11 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10F60ABAE0306C8372F73241 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		10F60ABAE0306C8372F73241 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		11C2332EFF63F4421E67A6D2 /* Pods-dvSection8_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dvSection8_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dvSection8_Example/Pods-dvSection8_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		18707609A162B83B13B9B2F3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		18707609A162B83B13B9B2F3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		3A626688456CFCA8258D5796 /* Pods-dvSection8_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dvSection8_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-dvSection8_Example/Pods-dvSection8_Example.release.xcconfig"; sourceTree = "<group>"; };
-		5842CDB685CB07BEBC14FC69 /* dvSection8.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = dvSection8.podspec; path = ../dvSection8.podspec; sourceTree = "<group>"; };
+		5842CDB685CB07BEBC14FC69 /* dvSection8.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = dvSection8.podspec; path = ../dvSection8.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* dvSection8_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dvSection8_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,7 +215,9 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 3ED676QG7W;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -496,11 +498,15 @@
 			baseConfigurationReference = 11C2332EFF63F4421E67A6D2 /* Pods-dvSection8_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3ED676QG7W;
 				INFOPLIST_FILE = dvSection8/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yondu.section8.-.dvSection8-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ec626ccb-be49-4f4c-8c3f-feb1b8a1b902";
+				PROVISIONING_PROFILE_SPECIFIER = "Section8 Dev all";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -510,11 +516,15 @@
 			baseConfigurationReference = 3A626688456CFCA8258D5796 /* Pods-dvSection8_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3ED676QG7W;
 				INFOPLIST_FILE = dvSection8/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yondu.section8.-.dvSection8-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ec626ccb-be49-4f4c-8c3f-feb1b8a1b902";
+				PROVISIONING_PROFILE_SPECIFIER = "Section8 Dev all";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

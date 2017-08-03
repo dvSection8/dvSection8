@@ -1,0 +1,22 @@
+{
+  "name": "dvSection8",
+  "version": "0.1.0",
+  "summary": "A short description of dvSection8.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/dvSection8/dvSection8",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "dvSection8": "section8.rush@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/dvSection8/dvSection8.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "dvSection8/Classes/**/*"
+}

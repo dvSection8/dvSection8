@@ -1,0 +1,6 @@
+framework module Pods_dvSection8_Example {
+  umbrella header "Pods-dvSection8_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
