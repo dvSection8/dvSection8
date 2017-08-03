@@ -19,5 +19,16 @@
     "ios": "8.0"
   },
   "source_files": "dvSection8/Classes/**/*",
-  "frameworks": "UIKit"
+  "frameworks": "UIKit",
+  "dependencies": {
+    "JSONCodable": [
+      "~> 3.0.1"
+    ],
+    "AsyncSwift": [
+
+    ],
+    "SDWebImage": [
+      "~> 4.0"
+    ]
+  }
 }

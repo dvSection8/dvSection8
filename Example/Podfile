@@ -4,20 +4,6 @@ target 'dvSection8_Example' do
   platform :ios, '9.0'
   use_frameworks!
   pod 'dvSection8', :path => '../'
-  pod 'JSONCodable', '~> 3.0.1'
-  pod 'AsyncSwift'
-  pod 'SDWebImage', '~> 4.0'
-  pod 'Countly', '~> 17.05'
-  pod 'Fabric'
-  pod 'Crashlytics'
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
-  pod 'Google/Analytics'
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
-  pod 'FBSDKShareKit'
-  pod 'IQKeyboardManager'
-  pod 'youtube-ios-player-helper', '~> 0.1.4'
 
   target 'dvSection8_Tests' do
     inherit! :search_paths

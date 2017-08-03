@@ -1,69 +1,16 @@
 PODS:
   - AsyncSwift (2.0.1)
-  - Bolts (1.8.4):
-    - Bolts/AppLinks (= 1.8.4)
-    - Bolts/Tasks (= 1.8.4)
-  - Bolts/AppLinks (1.8.4):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.8.4)
-  - Countly (17.05)
-  - Crashlytics (3.8.5):
-    - Fabric (~> 1.6.3)
-  - dvSection8 (1.0.0)
-  - Fabric (1.6.12)
-  - FBSDKCoreKit (4.25.0):
-    - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.25.0):
-    - FBSDKCoreKit
-  - FBSDKShareKit (4.25.0):
-    - FBSDKCoreKit
-  - FirebaseAnalytics (3.9.0):
-    - FirebaseCore (~> 3.6)
-    - FirebaseInstanceID (~> 1.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (3.6.0):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (1.0.10):
-    - FirebaseCore (~> 3.6)
-  - Google/Analytics (3.1.0):
-    - Google/Core
-    - GoogleAnalytics (~> 3.12)
-  - Google/Core (3.1.0):
-    - FirebaseAnalytics (~> 3.2)
-  - GoogleAnalytics (3.17.0)
-  - GoogleMaps (2.4.0):
-    - GoogleMaps/Maps (= 2.4.0)
-  - GoogleMaps/Base (2.4.0)
-  - GoogleMaps/Maps (2.4.0):
-    - GoogleMaps/Base
-  - GooglePlaces (2.4.0):
-    - GoogleMaps/Base (= 2.4.0)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-  - IQKeyboardManager (4.0.11)
+  - dvSection8 (1.0.0):
+    - AsyncSwift
+    - JSONCodable (~> 3.0.1)
+    - SDWebImage (~> 4.0)
   - JSONCodable (3.0.1)
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
-  - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
-  - AsyncSwift
-  - Countly (~> 17.05)
-  - Crashlytics
   - dvSection8 (from `../`)
-  - Fabric
-  - FBSDKCoreKit
-  - FBSDKLoginKit
-  - FBSDKShareKit
-  - Google/Analytics
-  - GoogleMaps
-  - GooglePlaces
-  - IQKeyboardManager
-  - JSONCodable (~> 3.0.1)
-  - SDWebImage (~> 4.0)
-  - youtube-ios-player-helper (~> 0.1.4)
 
 EXTERNAL SOURCES:
   dvSection8:
@@ -71,27 +18,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  Countly: 79461b67471f3c445d599de3ed700b024cb3e1d4
-  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
-  dvSection8: 16f49fd2f58897519c937d2d09e320c387bf8913
-  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
-  FBSDKCoreKit: 53e3f4bfb64e80c5f229dd30ae33ff57fbbbd2d1
-  FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
-  FBSDKShareKit: aea699d3cac749af08e360f4e949b82ffa8813f5
-  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
-  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
-  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
-  Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
-  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
-  GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
-  GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
+  dvSection8: 5806534ad88bb3ce769462c2e593aa11120dee05
   JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
-  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 73c30e2aec54c89cd37ffb92e857af1a9f34e63c
+PODFILE CHECKSUM: 4d022f0af4d0cf1964e1b2f5056f30231623ed56
 
 COCOAPODS: 1.2.1
