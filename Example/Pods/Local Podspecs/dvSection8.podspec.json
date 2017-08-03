@@ -29,6 +29,36 @@
     ],
     "SDWebImage": [
       "~> 4.0"
+    ],
+    "Countly": [
+      "~> 17.05"
+    ],
+    "Fabric": [
+
+    ],
+    "Crashlytics": [
+
+    ],
+    "FBSDKCoreKit": [
+
+    ],
+    "FBSDKLoginKit": [
+
+    ],
+    "FBSDKShareKit": [
+
+    ],
+    "IQKeyboardManager": [
+
+    ],
+    "ReachabilitySwift": [
+      "~> 3"
+    ],
+    "SwiftLint": [
+
+    ],
+    "HTTPStatusCodes": [
+      "~> 3.1.2"
     ]
   }
 }

@@ -5,6 +5,10 @@ target 'dvSection8_Example' do
   use_frameworks!
   pod 'dvSection8', :path => '../'
 
+  pre_install do |installer|
+    def installer.verify_no_static_framework_transitive_dependencies; end
+  end
+
   target 'dvSection8_Tests' do
     inherit! :search_paths
   end
