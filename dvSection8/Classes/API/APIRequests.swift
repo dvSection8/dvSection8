@@ -14,7 +14,7 @@ public struct APIRequests {
     var parameters: Paremeters? = nil
     var headers: HTTPHeaders? = nil
     
-    init(_ method: HTTPMethod, url: URL?, parameters: Paremeters?, headers: HTTPHeaders?) {
+    public init(_ method: HTTPMethod, url: URL?, parameters: Paremeters?, headers: HTTPHeaders?) {
         self.method = method
         self.url = url
         self.parameters = parameters

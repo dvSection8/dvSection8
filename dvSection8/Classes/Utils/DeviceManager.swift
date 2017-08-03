@@ -8,17 +8,17 @@
 
 import UIKit
 
-struct DeviceManager {
+public struct DeviceManager {
     // get model
-    let model = UIDevice().model
+    public let model = UIDevice().model
     // get platform
-    let platform = UIDevice().systemName
+    public let platform = UIDevice().systemName
     // get platform version
-    let platformVersion = UIDevice().systemVersion
+    public let platformVersion = UIDevice().systemVersion
     // get deviceid or uuid
-    let deviceId = UIDevice.current.identifierForVendor?.uuidString ?? ""
+    public let deviceId = UIDevice.current.identifierForVendor?.uuidString ?? ""
     // get device name from bundle
-    var appName: String {
+    public var appName: String {
         get {
             if let bundle = Bundle.main.infoDictionary,
                 let appname = bundle["CFBundleDisplayName"] as? String {
@@ -28,7 +28,7 @@ struct DeviceManager {
         }
     }
     // get app version from bundle
-    var appVersion: String {
+    public var appVersion: String {
         get {
             if let bundle = Bundle.main.infoDictionary,
                 let appversion = bundle["CFBundleShortVersionString"] as? String {

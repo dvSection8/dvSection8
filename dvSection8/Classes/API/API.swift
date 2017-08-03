@@ -19,7 +19,7 @@ public class API: NSObject {
     fileprivate let session :URLSession?
     fileprivate var reachability :Reachability?
 
-    override init() {
+    override public init() {
         let configuration = URLSessionConfiguration.default
         configuration.allowsCellularAccess = true
         configuration.timeoutIntervalForRequest = 45.0
@@ -104,7 +104,7 @@ public class API: NSObject {
 }
 
 extension API {
-    public func canConnect() -> Bool {
+    fileprivate func canConnect() -> Bool {
         if let reachable = self.reachability, reachable.isReachableViaWiFi || reachable.isReachableViaWWAN {
             return true
         } else if let reachable = self.reachability {

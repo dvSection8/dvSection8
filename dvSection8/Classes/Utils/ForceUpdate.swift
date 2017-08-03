@@ -8,14 +8,14 @@
 
 import Foundation
 
-fileprivate enum iTunesAffiliates {
+public enum iTunesAffiliates {
     enum Lookup: String {
         case ph = "http://itunes.apple.com/ph/lookup?id="
         case us = "http://itunes.apple.com/lookup?id="
     }
 }
 
-struct ForceUpdate {
+public struct ForceUpdate {
     var api :API?
     var _iTunesID :String = ""
     var iTunesID :String {
@@ -23,7 +23,7 @@ struct ForceUpdate {
         get { return _iTunesID }
     }
     
-    init() {
+    public init() {
         api = API()
     }
     

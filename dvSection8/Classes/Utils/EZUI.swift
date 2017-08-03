@@ -21,11 +21,11 @@ public enum BackgroundStyle: Int {
 }
 
 @IBDesignable
-class EZLayoutConstraint: NSLayoutConstraint {
+public class EZLayoutConstraint: NSLayoutConstraint {
     
     @IBInspectable
     //iPhone 4
-    var 📱3¨5_constant: CGFloat = 0 {
+    public var 📱3¨5_constant: CGFloat = 0 {
         didSet {
             if UIScreen.main.bounds.maxY == 480 {
                 constant = 📱3¨5_constant
@@ -35,7 +35,7 @@ class EZLayoutConstraint: NSLayoutConstraint {
     
     //iPhone 5, 5C, 5S, iPod Touch 5g,SE
     @IBInspectable
-    var 📱4¨0_constant: CGFloat = 0 {
+    public var 📱4¨0_constant: CGFloat = 0 {
         didSet {
             if UIScreen.main.bounds.maxY == 568 {
                 constant = 📱4¨0_constant
@@ -45,7 +45,7 @@ class EZLayoutConstraint: NSLayoutConstraint {
     
     //iPhone 6, iPhone 6s, iPhone 7
     @IBInspectable
-    var 📱4¨7_constant: CGFloat = 0 {
+    public var 📱4¨7_constant: CGFloat = 0 {
         didSet {
             if UIScreen.main.bounds.maxY == 667 {
                 constant = 📱4¨7_constant
@@ -55,7 +55,7 @@ class EZLayoutConstraint: NSLayoutConstraint {
     
     //Phone 6 Plus, iPhone 6s Plus, iPhone 7 Plus
     @IBInspectable
-    var 📱5¨5_constant: CGFloat = 0 {
+    public var 📱5¨5_constant: CGFloat = 0 {
         didSet {
             if UIScreen.main.bounds.maxY == 736 {
                 constant = 📱5¨5_constant
@@ -65,10 +65,10 @@ class EZLayoutConstraint: NSLayoutConstraint {
 }
 
 @IBDesignable
-class EZUILabel: UILabel {
+public class EZUILabel: UILabel {
 
     @IBInspectable
-    var 📱3¨5_fontSize: CGFloat {
+    public var 📱3¨5_fontSize: CGFloat {
         get {
             return font.pointSize
         }
@@ -80,7 +80,7 @@ class EZUILabel: UILabel {
     }
     
     @IBInspectable
-    var 📱4¨0_fontSize: CGFloat {
+    public var 📱4¨0_fontSize: CGFloat {
         get {
             return font.pointSize
         }
@@ -92,7 +92,7 @@ class EZUILabel: UILabel {
     }
     
     @IBInspectable
-    var 📱4¨7_fontSize: CGFloat {
+    public var 📱4¨7_fontSize: CGFloat {
         get {
             return font.pointSize
         }
@@ -104,7 +104,7 @@ class EZUILabel: UILabel {
     }
     
     @IBInspectable
-    var 📱5¨5_fontSize: CGFloat{
+    public var 📱5¨5_fontSize: CGFloat{
         get {
             return font.pointSize
         }
@@ -115,9 +115,9 @@ class EZUILabel: UILabel {
         }
     }
     
-    var style: LabelStyle = .none
+    public var style: LabelStyle = .none
     
-    @IBInspectable var labelStyle:Int {
+    @IBInspectable public var labelStyle:Int {
         get {
             return self.style.rawValue
         }
@@ -126,7 +126,7 @@ class EZUILabel: UILabel {
         }
     }
     
-    dynamic var headerStyleColor: UIColor {
+    dynamic public var headerStyleColor: UIColor {
         get { return self.textColor }
         set {
             if style == .header {
@@ -135,7 +135,7 @@ class EZUILabel: UILabel {
         }
     }
     
-    dynamic var contentStyleColor: UIColor {
+    dynamic public var contentStyleColor: UIColor {
         get { return self.textColor }
         set {
             if style == .content {
@@ -151,7 +151,7 @@ open class EZUIImageView: UIImageView {
     fileprivate var isCircular: Bool = false
     
     @IBInspectable
-    var cornerRadius:CGFloat {
+    public var cornerRadius:CGFloat {
         set {
             layer.cornerRadius = newValue
             clipsToBounds = newValue > 0
@@ -161,7 +161,7 @@ open class EZUIImageView: UIImageView {
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat {
+    @IBInspectable public var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -170,7 +170,7 @@ open class EZUIImageView: UIImageView {
         }
     }
     
-    @IBInspectable var borderColor: UIColor? {
+    @IBInspectable public var borderColor: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor!)
         }
@@ -180,7 +180,7 @@ open class EZUIImageView: UIImageView {
     }
     
     @IBInspectable
-    var makeCircular: Bool {
+    public var makeCircular: Bool {
         set {
             isCircular = newValue
             if isCircular {
@@ -203,12 +203,12 @@ open class EZUIImageView: UIImageView {
 }
 
 @IBDesignable
-class EZUIButton: UIButton {
+public class EZUIButton: UIButton {
     
     fileprivate var isRounded: Bool = false
     
     @IBInspectable
-    var cornerRadius:CGFloat {
+    public var cornerRadius:CGFloat {
         set {
             layer.cornerRadius = newValue
             clipsToBounds = newValue > 0
@@ -219,7 +219,7 @@ class EZUIButton: UIButton {
     }
     
     @IBInspectable
-    var 📱3¨5_fontSize: CGFloat {
+    public var 📱3¨5_fontSize: CGFloat {
         get {
             return (titleLabel?.font.pointSize)!
         }
@@ -231,7 +231,7 @@ class EZUIButton: UIButton {
     }
     
     @IBInspectable
-    var 📱4¨0_fontSize: CGFloat {
+    public var 📱4¨0_fontSize: CGFloat {
         get {
             return (titleLabel?.font.pointSize)!
         }
@@ -243,7 +243,7 @@ class EZUIButton: UIButton {
     }
     
     @IBInspectable
-    var 📱4¨7_fontSize: CGFloat {
+    public var 📱4¨7_fontSize: CGFloat {
         get {
             return (titleLabel?.font.pointSize)!
         }
@@ -255,7 +255,7 @@ class EZUIButton: UIButton {
     }
     
     @IBInspectable
-    var 📱5¨5_fontSize: CGFloat {
+    public var 📱5¨5_fontSize: CGFloat {
         get {
             return (titleLabel?.font.pointSize)!
         }
@@ -267,7 +267,7 @@ class EZUIButton: UIButton {
     }
     
     @IBInspectable
-    var makeCornersRounded: Bool {
+    public var makeCornersRounded: Bool {
         set {
             self.isRounded = newValue
             if isRounded {
@@ -281,7 +281,7 @@ class EZUIButton: UIButton {
         }
     }
     
-    func setBackgroundColor(color: UIColor, forState: UIControlState) {
+    public func setBackgroundColor(color: UIColor, forState: UIControlState) {
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
         UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
         UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
@@ -291,14 +291,14 @@ class EZUIButton: UIButton {
         self.setBackgroundImage(colorImage, for: forState)
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         if makeCornersRounded {
             makeCornersRounded = true
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat {
+    @IBInspectable public var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -307,7 +307,7 @@ class EZUIButton: UIButton {
         }
     }
     
-    @IBInspectable var borderColor: UIColor? {
+    @IBInspectable public var borderColor: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor!)
         }
@@ -316,10 +316,10 @@ class EZUIButton: UIButton {
         }
     }
     
-    var style: LabelStyle = .none
-    var bgStyle: BackgroundStyle = ._default
+    public var style: LabelStyle = .none
+    public var bgStyle: BackgroundStyle = ._default
     
-    @IBInspectable var labelStyle:Int {
+    @IBInspectable public var labelStyle:Int {
         get {
             return self.style.rawValue
         }
@@ -328,14 +328,14 @@ class EZUIButton: UIButton {
         }
     }
     
-    @IBInspectable var backgroundStyle:Int {
+    @IBInspectable public var backgroundStyle:Int {
         get { return self.bgStyle.rawValue }
         set ( bgStyleIndex ) {
             self.bgStyle = BackgroundStyle(rawValue: bgStyleIndex) ?? ._default
         }
     }
     
-    dynamic var headerStyleColor: UIColor? {
+    dynamic public var headerStyleColor: UIColor? {
         get { return self.titleColor(for: .normal) }
         set {
             if style == .header {
@@ -344,7 +344,7 @@ class EZUIButton: UIButton {
         }
     }
     
-    dynamic var contentStyleColor: UIColor? {
+    dynamic public var contentStyleColor: UIColor? {
         get { return self.titleColor(for: .normal) }
         set {
             if style == .content {
@@ -353,7 +353,7 @@ class EZUIButton: UIButton {
         }
     }
     
-    dynamic var defaultBgStyleColor: UIColor? {
+    dynamic public var defaultBgStyleColor: UIColor? {
         get { return self.backgroundColor }
         set {
             if bgStyle == ._default {
@@ -366,7 +366,7 @@ class EZUIButton: UIButton {
 @IBDesignable
 class EZUIView: UIView {
     
-    @IBInspectable var borderWidth: CGFloat {
+    @IBInspectable public var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -375,7 +375,7 @@ class EZUIView: UIView {
         }
     }
     
-    @IBInspectable var borderColor: UIColor? {
+    @IBInspectable public var borderColor: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor!)
         }
@@ -388,7 +388,7 @@ class EZUIView: UIView {
 @IBDesignable
 class EZUITextView: UITextView {
     
-    @IBInspectable var borderWidth: CGFloat {
+    @IBInspectable public var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -397,7 +397,7 @@ class EZUITextView: UITextView {
         }
     }
     
-    @IBInspectable var borderColor: UIColor? {
+    @IBInspectable public var borderColor: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor!)
         }
@@ -408,7 +408,7 @@ class EZUITextView: UITextView {
     
     var style: LabelStyle = .none
     
-    @IBInspectable var labelStyle:Int {
+    @IBInspectable public var labelStyle:Int {
         get {
             return self.style.rawValue
         }
@@ -417,7 +417,7 @@ class EZUITextView: UITextView {
         }
     }
     
-    dynamic var headerStyleColor: UIColor? {
+    dynamic public var headerStyleColor: UIColor? {
         get { return self.textColor }
         set {
             if style == .header {
@@ -426,7 +426,7 @@ class EZUITextView: UITextView {
         }
     }
     
-    dynamic var contentStyleColor: UIColor? {
+    dynamic public var contentStyleColor: UIColor? {
         get { return self.textColor }
         set {
             if style == .content {
@@ -444,7 +444,7 @@ class EZUITextView: UITextView {
 open class EZUITextField: UITextField {
     
     @IBInspectable
-    var 📱3¨5_fontSize: CGFloat {
+    public var 📱3¨5_fontSize: CGFloat {
         get {
             return (font?.pointSize)!
         }
@@ -456,7 +456,7 @@ open class EZUITextField: UITextField {
     }
     
     @IBInspectable
-    var 📱4¨0_fontSize: CGFloat {
+    public var 📱4¨0_fontSize: CGFloat {
         get {
             return (font?.pointSize)!
         }
@@ -468,7 +468,7 @@ open class EZUITextField: UITextField {
     }
     
     @IBInspectable
-    var 📱4¨7_fontSize: CGFloat {
+    public var 📱4¨7_fontSize: CGFloat {
         get {
             return (font?.pointSize)!
         }
@@ -480,7 +480,7 @@ open class EZUITextField: UITextField {
     }
     
     @IBInspectable
-    var 📱5¨5_fontSize: CGFloat {
+    public var 📱5¨5_fontSize: CGFloat {
         get {
             return (font?.pointSize)!
         }
@@ -491,7 +491,7 @@ open class EZUITextField: UITextField {
         }
     }
     
-    @IBInspectable var borderColor: UIColor? {
+    @IBInspectable public var borderColor: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor!)
         }
@@ -509,7 +509,7 @@ open class EZUITextField: UITextField {
     
     var style: LabelStyle = .none
     
-    @IBInspectable var labelStyle:Int {
+    @IBInspectable public var labelStyle:Int {
         get {
             return self.style.rawValue
         }
@@ -518,7 +518,7 @@ open class EZUITextField: UITextField {
         }
     }
     
-    dynamic var headerStyleColor: UIColor? {
+    dynamic public var headerStyleColor: UIColor? {
         get { return self.textColor }
         set {
             if style == .header {
@@ -528,7 +528,7 @@ open class EZUITextField: UITextField {
         }
     }
     
-    dynamic var contentStyleColor: UIColor? {
+    dynamic public var contentStyleColor: UIColor? {
         get { return self.textColor }
         set {
             if style == .content {
@@ -545,7 +545,7 @@ open class EZUIStackView: UIStackView {
     
     @IBInspectable
     //iPhone 4
-    var 📱3¨5_spacing: CGFloat = 0 {
+    public var 📱3¨5_spacing: CGFloat = 0 {
         didSet {
             if UIScreen.main.bounds.maxY == 480 {
                 spacing = 📱3¨5_spacing
@@ -555,7 +555,7 @@ open class EZUIStackView: UIStackView {
     
     //iPhone 5, 5C, 5S, iPod Touch 5g,SE
     @IBInspectable
-    var 📱4¨0_spacing: CGFloat = 0 {
+    public var 📱4¨0_spacing: CGFloat = 0 {
         didSet {
             if UIScreen.main.bounds.maxY == 568 {
                 spacing = 📱4¨0_spacing
@@ -565,7 +565,7 @@ open class EZUIStackView: UIStackView {
     
     //iPhone 6, iPhone 6s, iPhone 7
     @IBInspectable
-    var 📱4¨7_spacing: CGFloat = 0 {
+    public var 📱4¨7_spacing: CGFloat = 0 {
         didSet {
             if UIScreen.main.bounds.maxY == 667 {
                 spacing = 📱4¨7_spacing
@@ -575,7 +575,7 @@ open class EZUIStackView: UIStackView {
     
     //Phone 6 Plus, iPhone 6s Plus, iPhone 7 Plus
     @IBInspectable
-    var 📱5¨5_spacing: CGFloat = 0 {
+    public var 📱5¨5_spacing: CGFloat = 0 {
         didSet {
             if UIScreen.main.bounds.maxY == 736 {
                 spacing = 📱5¨5_spacing
@@ -587,7 +587,7 @@ open class EZUIStackView: UIStackView {
 
 extension UILabel {
     
-    func addImage(named: String, afterLabel: Bool = false) {
+    public func addImage(named: String, afterLabel: Bool = false) {
         let attachment: NSTextAttachment = NSTextAttachment()
         attachment.image = UIImage(named: named)
         let attachmentString: NSAttributedString = NSAttributedString(attachment: attachment)
@@ -607,7 +607,7 @@ extension UILabel {
 
 extension UIColor {
     
-    class func hexStringToUIColor (hex:String) -> UIColor {
+    public class func hexStringToUIColor (hex:String) -> UIColor {
         
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
@@ -631,27 +631,27 @@ extension UIColor {
     }
 }
 
-class EZCheckbox: UIButton {
+public class EZCheckbox: UIButton {
     
-    var radioMode : Bool = false
-    var onImage : UIImage?
-    var offImage : UIImage?
-    var onBgColor : UIColor?
-    var offBgColor : UIColor?
-    var onTextColor : UIColor?
-    var offTextColor : UIColor?
+    public var radioMode : Bool = false
+    public var onImage : UIImage?
+    public var offImage : UIImage?
+    public var onBgColor : UIColor?
+    public var offBgColor : UIColor?
+    public var onTextColor : UIColor?
+    public var offTextColor : UIColor?
     
-    var payload : AnyObject?
+    public var payload : AnyObject?
     
     private var _isOn = false
     private var originalAlpha : CGFloat = 1.0
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         originalAlpha = self.alpha
     }
     
-    var isOn : Bool {
+    public var isOn : Bool {
         get {
             return _isOn
         }
@@ -670,12 +670,12 @@ class EZCheckbox: UIButton {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.alpha = 0.9
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.alpha = originalAlpha
         
         if touches.count >= 1 {
@@ -695,7 +695,7 @@ class EZCheckbox: UIButton {
         super.touchesEnded(touches, with: event)
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
         self.alpha = originalAlpha
     }
@@ -703,12 +703,12 @@ class EZCheckbox: UIButton {
 
 extension UINavigationBar {
     
-    func hideBottomHairline() {
+    public func hideBottomHairline() {
         let navigationBarImageView = hairlineImageViewInNavigationBar(self)
         navigationBarImageView?.isHidden = true
     }
     
-    func showBottomHairline() {
+    public func showBottomHairline() {
         let navigationBarImageView = hairlineImageViewInNavigationBar(self)
         navigationBarImageView?.isHidden = false
     }
@@ -728,7 +728,7 @@ extension UINavigationBar {
         return nil
     }
     
-    func makeTransparent() {
+    public func makeTransparent() {
         self.setBackgroundImage(UIImage(), for: .default)
         self.shadowImage = UIImage()
         self.isTranslucent = true
@@ -737,7 +737,7 @@ extension UINavigationBar {
 
 extension UIView {
     
-    func addTopBorderWithColor(color: UIColor, width: CGFloat) -> CALayer {
+    public func addTopBorderWithColor(color: UIColor, width: CGFloat) -> CALayer {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: width)
@@ -745,7 +745,7 @@ extension UIView {
         return border
     }
     
-    func addRightBorderWithColor(color: UIColor, width: CGFloat) -> CALayer {
+    public func addRightBorderWithColor(color: UIColor, width: CGFloat) -> CALayer {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x: self.frame.size.width - width, y: 0, width: width, height: self.frame.size.height)
@@ -753,7 +753,7 @@ extension UIView {
         return border
     }
     
-    func addBottomBorderWithColor(color: UIColor, width: CGFloat) -> CALayer {
+    public func addBottomBorderWithColor(color: UIColor, width: CGFloat) -> CALayer {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
@@ -761,7 +761,7 @@ extension UIView {
         return border
     }
     
-    func addLeftBorderWithColor(color: UIColor, width: CGFloat) -> CALayer {
+    public func addLeftBorderWithColor(color: UIColor, width: CGFloat) -> CALayer {
         let border = CALayer()
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x: 0, y: 0, width: width, height: self.frame.size.height)
@@ -776,7 +776,7 @@ extension UIView {
     @IBInspectable var bottomInset: CGFloat = 0.0
     @IBInspectable var rightInset: CGFloat = 0.0
     
-    var insets: UIEdgeInsets {
+    public var insets: UIEdgeInsets {
         get {
             return UIEdgeInsetsMake(topInset, leftInset, bottomInset, rightInset)
         }
@@ -788,11 +788,11 @@ extension UIView {
         }
     }
     
-    override func drawText(in rect: CGRect) {
+    override public func drawText(in rect: CGRect) {
         super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
     }
     
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
+    override public func sizeThatFits(_ size: CGSize) -> CGSize {
         var adjSize = super.sizeThatFits(size)
         adjSize.width += leftInset + rightInset
         adjSize.height += topInset + bottomInset
@@ -800,7 +800,7 @@ extension UIView {
         return adjSize
     }
     
-    override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         var contentSize = super.intrinsicContentSize
         contentSize.width += leftInset + rightInset
         contentSize.height += topInset + bottomInset
