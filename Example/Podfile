@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'dvSection8_Example' do
+  pod 'dvSection8', :path => '../'
+
+  target 'dvSection8_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
