@@ -8,29 +8,24 @@
 
 import Foundation
 
-public enum iTunesAffiliates {
-    enum Lookup: String {
-        case ph = "http://itunes.apple.com/ph/lookup?id="
-        case us = "http://itunes.apple.com/lookup?id="
-    }
+public enum iTunesLookUp: String {
+    case ph = "http://itunes.apple.com/ph/lookup?id="
+    case us = "http://itunes.apple.com/lookup?id="
 }
 
 public struct DVForceUpdate {
     var api :DVAPI?
-    var _iTunesID :String = ""
-    var iTunesID :String {
-        set { _iTunesID = newValue }
-        get { return _iTunesID }
-    }
+    var itunesID: String?
+    var lookUpTerritory: String?
     
-    public init() {
-        api = DVAPI()
+    public init(itunesID id: String?, lookUp: iTunesLookUp) {
+        self.api = DVAPI()
+        self.itunesID = id
+        self.lookUpTerritory = lookUp.rawValue
     }
     
     /**
      Set content-type in HTTP header
-     
-     - returns: A string for content type
     */
     fileprivate func contentType() -> String {
         let boundaryConstant = "----------V2ymHFg03esomerandomstuffhbqgZCaKO6jy";
@@ -40,30 +35,19 @@ public struct DVForceUpdate {
     
     /**
      This function will requests for lookup itunes api
-     
-     - parameter id: The id of Apple ID or iTunes ID
-     
-     - returns: A result the api requests object
      */
-    fileprivate func requests(_ id: Any) -> DVAPIRequests {
-        let url = URL(string: iTunesAffiliates.Lookup.ph.rawValue + "\(id)")
+    fileprivate func requests() -> DVAPIRequests {
+        let url = URL(string: "\(self.lookUpTerritory ?? "")" + "\(self.itunesID ?? "")")
         let headers = ["content-Type": contentType()]
         return DVAPIRequests(.post, url: url, parameters: nil, headers: headers)
     }
     
     /**
      This function will result block for lookup itunes api to get the json data
-     
-     - parameter id: The id of Apple ID or iTunes ID
-     - parameter success: The response of success block
-     - parameter failed: The response of failed block
-     
-     - returns: A success block for json data response and the failed block for error code response
     */
-    fileprivate func lookupApplicationBy(iTunesID id: Any,
-                                                 success: @escaping ResponseSuccessBlock,
-                                                 failed: @escaping ResponseFailedBlock) {
-        let requests = self.requests(id)
+    fileprivate func lookupApplicationBy(success: @escaping ResponseSuccessBlock,
+                                         failed: @escaping ResponseFailedBlock) {
+        let requests = self.requests()
         self.api?.request(requests, success: { (results) in
             success(results)
         }, failed: { (errorCode) in
@@ -73,13 +57,9 @@ public struct DVForceUpdate {
     
     /** 
      This function will result block for app store version
-     
-     - parameter version: The version block of app store version
-     
-     - returns: A result block for version string value
     */
     fileprivate func getAppStoreVersion(_ version: @escaping (String) -> ()) {
-        lookupApplicationBy(iTunesID: iTunesID, success: { (results) in
+        lookupApplicationBy(success: { (results) in
             if let results = results["results"] as? [Any] {
                 if results.count > 0 {
                     if let dict = results[0] as? JSONDictionary, let appStoreVersion = dict["version"] as? String {
@@ -92,8 +72,9 @@ public struct DVForceUpdate {
         }
     }
     
-    // check the current app store version and current installed app version
-    
+    /** 
+     check the current app store version and current installed app version
+    */
     public func checkAppVersion(_ update: @escaping () -> ()) {
         getAppStoreVersion { (value) in
             // get installed app version

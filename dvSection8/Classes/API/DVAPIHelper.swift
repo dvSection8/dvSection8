@@ -12,7 +12,7 @@ public struct DVAPIHelper {
     
     public static let shared = DVAPIHelper()
 
-    // Appending of keys and values
+    // Appending of keys and values from parameters
     public func query(_ parameters: Paremeters) -> String {
         var components: StringArray = []
 
