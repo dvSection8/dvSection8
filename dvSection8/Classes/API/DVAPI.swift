@@ -71,13 +71,15 @@ public class DVAPI: NSObject {
                                  success: @escaping ResponseSuccessBlock,
                                  failed: @escaping ResponseFailedBlock) {
 
-        self.session?.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+        var task: URLSessionTask?
+        task = self.session?.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
 
             guard let data = data, error == nil else {
                 // failed
                 if let _error = error as NSError? {
                     let apiError = DVAPIError.urlErrorDomain(_error)
                     failed(apiError)
+                    task?.cancel()
                 }
                 return
             }
@@ -87,8 +89,10 @@ public class DVAPI: NSObject {
                     // failed
                     if let httpResponse = response as? HTTPURLResponse, let errorCode = DVAPIError.responseStatus(httpResponse) {
                         failed(errorCode)
+                        task?.cancel()
                     } else {
                         failed(.invalidData)
+                        task?.cancel()
                     }
                     return
                 }
@@ -97,9 +101,12 @@ public class DVAPI: NSObject {
             } catch {
                 // failed
                 failed(.invalidData)
+                task?.cancel()
+                return
             }
 
-        }).resume()
+        })
+        task?.resume()
     }
 
 }
