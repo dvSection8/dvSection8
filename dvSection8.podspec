@@ -28,7 +28,7 @@ s.author           = { 'dvSection8' => 'section8.rush@gmail.com' }
 s.source           = { :git => 'https://github.com/dvSection8/dvSection8.git', :tag => s.version.to_s }
 # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-s.ios.deployment_target = '8.0'
+s.ios.deployment_target = '9.0'
 
 s.source_files = 'dvSection8/Classes/**/*'
 
@@ -47,11 +47,4 @@ s.dependency 'FBSDKShareKit'
 s.dependency 'IQKeyboardManager'
 s.dependency 'ReachabilitySwift', '~> 3'
 s.dependency 'HTTPStatusCodes', '~> 3.1.2'
-
-#s.dependency 'GoogleMaps'
-#s.dependency 'GooglePlaces'
-#s.dependency 'Google/Analytics'
-#s.dependency 'Firebase/Core'
-#s.dependency 'youtube-ios-player-helper', '~> 0.1.4'
-
 end
