@@ -6,14 +6,8 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - Countly (17.05)
-  - Crashlytics (3.8.5):
-    - Fabric (~> 1.6.3)
   - dvSection8 (1.0.0):
     - AsyncSwift
-    - Countly (~> 17.05)
-    - Crashlytics
-    - Fabric
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
@@ -22,14 +16,39 @@ PODS:
     - JSONCodable (~> 3.0.1)
     - ReachabilitySwift (~> 3)
     - SDWebImage (~> 4.0)
-    - SwiftLint
-  - Fabric (1.6.12)
   - FBSDKCoreKit (4.25.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.25.0):
     - FBSDKCoreKit
   - FBSDKShareKit (4.25.0):
     - FBSDKCoreKit
+  - Firebase/Core (3.17.0):
+    - FirebaseAnalytics (= 3.9.0)
+    - FirebaseCore (= 3.6.0)
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.6.0):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
+  - Google/Analytics (3.1.0):
+    - Google/Core
+    - GoogleAnalytics (~> 3.12)
+  - Google/Core (3.1.0):
+    - FirebaseAnalytics (~> 3.2)
+  - GoogleAnalytics (3.17.0)
+  - GoogleMaps (2.4.0):
+    - GoogleMaps/Maps (= 2.4.0)
+  - GoogleMaps/Base (2.4.0)
+  - GoogleMaps/Maps (2.4.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.4.0):
+    - GoogleMaps/Base (= 2.4.0)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - HTTPStatusCodes (3.1.2)
   - IQKeyboardManager (4.0.11)
   - JSONCodable (3.0.1)
@@ -37,10 +56,13 @@ PODS:
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
-  - SwiftLint (0.21.0)
 
 DEPENDENCIES:
   - dvSection8 (from `../`)
+  - Firebase/Core
+  - Google/Analytics
+  - GoogleMaps
+  - GooglePlaces
 
 EXTERNAL SOURCES:
   dvSection8:
@@ -49,20 +71,25 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  Countly: 79461b67471f3c445d599de3ed700b024cb3e1d4
-  Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
-  dvSection8: 12d527eb5e55605f423dca7eaaf9a748d5c7edb9
-  Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
+  dvSection8: 8b78240bd741787edce0362b1ca29dbcc4013e7c
   FBSDKCoreKit: 53e3f4bfb64e80c5f229dd30ae33ff57fbbbd2d1
   FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
   FBSDKShareKit: aea699d3cac749af08e360f4e949b82ffa8813f5
+  Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
+  Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
+  GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   HTTPStatusCodes: 88155ba36826366a898a7b4f34d311f49083d546
   IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
   JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
-  SwiftLint: 6de8b2d15f43c482bdec2953b8cfd696faa876e8
 
-PODFILE CHECKSUM: a0e97597819c47bead59ae71e210e556062d386b
+PODFILE CHECKSUM: 51694c9da05cfc2b1f6652021a211e8daf9184ec
 
 COCOAPODS: 1.2.1

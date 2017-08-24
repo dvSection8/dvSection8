@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 s.name             = 'dvSection8'
 s.version          = '1.0.0'
-s.summary          = 'dvSection8 is a boilerplate framework for the ios developer. This will be the references for using a standard codes to everyone.'
+s.summary          = 'dvSection8 is a boilerplate framework for the ios developer. This will be the reference for using a standard codes to everyone.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ s.summary          = 'dvSection8 is a boilerplate framework for the ios develope
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
 s.description      = <<-DESC
-dvSection8 is a boilerplate framework for the ios developer. This will be the references for using a standard codes to everyone. This is also help to easily develop the app.
+dvSection8 is a boilerplate framework for the ios developer. This will be the reference for using a standard codes to everyone. This is also help to easily develop the app.
 DESC
 
 s.homepage         = 'https://github.com/dvSection8/dvSection8.git'
@@ -28,7 +28,7 @@ s.author           = { 'dvSection8' => 'section8.rush@gmail.com' }
 s.source           = { :git => 'https://github.com/dvSection8/dvSection8.git', :tag => s.version.to_s }
 # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-s.ios.deployment_target = '9.0'
+s.ios.deployment_target = '8.0'
 
 s.source_files = 'dvSection8/Classes/**/*'
 
@@ -37,7 +37,7 @@ s.source_files = 'dvSection8/Classes/**/*'
 # }
 
 # s.public_header_files = 'Pod/Classes/**/*.h'
-s.frameworks = 'UIKit, UserNotification'
+s.frameworks = 'UIKit'
 s.dependency 'JSONCodable', '~> 3.0.1'
 s.dependency 'AsyncSwift'
 s.dependency 'SDWebImage', '~> 4.0'
@@ -47,10 +47,11 @@ s.dependency 'FBSDKShareKit'
 s.dependency 'IQKeyboardManager'
 s.dependency 'ReachabilitySwift', '~> 3'
 s.dependency 'HTTPStatusCodes', '~> 3.1.2'
-s.dependency 'GoogleMaps'
-s.dependency 'GooglePlaces'
-s.dependency 'Google/Analytics'
-s.dependency 'Firebase/Core'
 
+#s.dependency 'GoogleMaps'
+#s.dependency 'GooglePlaces'
+#s.dependency 'Google/Analytics'
+#s.dependency 'Firebase/Core'
 #s.dependency 'youtube-ios-player-helper', '~> 0.1.4'
+
 end

@@ -1,8 +1,8 @@
 {
   "name": "dvSection8",
   "version": "1.0.0",
-  "summary": "dvSection8 is a boilerplate framework for the ios developer. This will be the kickstarter for using a standard codes to everyone.",
-  "description": "dvSection8 is a boilerplate framework for the ios developer. This will be the kickstarter for using a standard codes to everyone. This is also help to easily develop the app.",
+  "summary": "dvSection8 is a boilerplate framework for the ios developer. This will be the reference for using a standard codes to everyone.",
+  "description": "dvSection8 is a boilerplate framework for the ios developer. This will be the reference for using a standard codes to everyone. This is also help to easily develop the app.",
   "homepage": "https://github.com/dvSection8/dvSection8.git",
   "license": {
     "type": "MIT",
@@ -30,15 +30,6 @@
     "SDWebImage": [
       "~> 4.0"
     ],
-    "Countly": [
-      "~> 17.05"
-    ],
-    "Fabric": [
-
-    ],
-    "Crashlytics": [
-
-    ],
     "FBSDKCoreKit": [
 
     ],
@@ -53,9 +44,6 @@
     ],
     "ReachabilitySwift": [
       "~> 3"
-    ],
-    "SwiftLint": [
-
     ],
     "HTTPStatusCodes": [
       "~> 3.1.2"
