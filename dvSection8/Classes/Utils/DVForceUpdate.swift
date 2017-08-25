@@ -58,17 +58,16 @@ public struct DVForceUpdate {
     /** 
      This function will result block for app store version
     */
-    fileprivate func getAppStoreVersion(_ version: @escaping (String) -> ()) {
+    public func getAppStoreVersion(_ value: @escaping (JSONDictionary) -> ()) {
         lookupApplicationBy(success: { (results) in
             if let results = results["results"] as? [Any] {
                 if results.count > 0 {
-                    if let dict = results[0] as? JSONDictionary, let appStoreVersion = dict["version"] as? String {
-                        version(appStoreVersion)
+                    if let dict = results[0] as? JSONDictionary {
+                        value(dict)
                     }
                 }
             }
         }) { (errorCode) in
-            version("")
         }
     }
     
@@ -76,26 +75,28 @@ public struct DVForceUpdate {
      check the current app store version and current installed app version
     */
     public func checkAppVersion(_ update: @escaping () -> ()) {
-        getAppStoreVersion { (value) in
+        getAppStoreVersion { (result) in
             // get installed app version
-            let deviceAppVersion = DVDeviceManager().appVersion
-            print("appStoreVersion: \(value), deviceAppVersion: \(deviceAppVersion)")
-            // get each version number
-            let asvComponents = value.components(separatedBy: ".")
-            let davComponents = deviceAppVersion.components(separatedBy: ".")
-            var isOutOfVersion = false
-            // check if current app store version and app version has not equal
-            for v in 0..<min(asvComponents.count, davComponents.count) {
-                let asv :String = asvComponents[v]
-                let dav :String = davComponents[v]
-                if asv != dav {
-                    isOutOfVersion = (dav < asv)
-                    break
+            if let appStoreVersion = result["version"] as? String {
+                let deviceAppVersion = DVDeviceManager().appVersion
+                print("appStoreVersion: \(appStoreVersion), deviceAppVersion: \(deviceAppVersion)")
+                // get each version number
+                let asvComponents = appStoreVersion.components(separatedBy: ".")
+                let davComponents = deviceAppVersion.components(separatedBy: ".")
+                var isOutOfVersion = false
+                // check if current app store version and app version has not equal
+                for v in 0..<min(asvComponents.count, davComponents.count) {
+                    let asv :String = asvComponents[v]
+                    let dav :String = davComponents[v]
+                    if asv != dav {
+                        isOutOfVersion = (dav < asv)
+                        break
+                    }
                 }
-            }
-            // the app version is out to date
-            if isOutOfVersion {
-                update()
+                // the app version is out to date
+                if isOutOfVersion {
+                    update()
+                }
             }
         }
     }

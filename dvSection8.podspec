@@ -47,4 +47,5 @@ s.dependency 'FBSDKShareKit'
 s.dependency 'IQKeyboardManager'
 s.dependency 'ReachabilitySwift', '~> 3'
 s.dependency 'HTTPStatusCodes', '~> 3.1.2'
+s.dependency 'DateToolsSwift'
 end
