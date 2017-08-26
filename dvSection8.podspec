@@ -38,14 +38,14 @@ s.source_files = 'dvSection8/Classes/**/*'
 
 # s.public_header_files = 'Pod/Classes/**/*.h'
 s.frameworks = 'UIKit'
-s.dependency 'JSONCodable', '~> 3.0.1'
-s.dependency 'AsyncSwift'
+s.dependency 'GCD'
 s.dependency 'SDWebImage', '~> 4.0'
 s.dependency 'FBSDKCoreKit'
 s.dependency 'FBSDKLoginKit'
 s.dependency 'FBSDKShareKit'
-s.dependency 'IQKeyboardManager'
 s.dependency 'ReachabilitySwift', '~> 3'
 s.dependency 'HTTPStatusCodes', '~> 3.1.2'
 s.dependency 'DateToolsSwift'
+
+#s.dependency 'IQKeyboardManager'
 end
