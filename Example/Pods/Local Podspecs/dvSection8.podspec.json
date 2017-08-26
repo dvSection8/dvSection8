@@ -16,32 +16,11 @@
     "tag": "1.0.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "dvSection8/Classes/**/*",
   "frameworks": "UIKit",
   "dependencies": {
-    "JSONCodable": [
-      "~> 3.0.1"
-    ],
-    "AsyncSwift": [
-
-    ],
-    "SDWebImage": [
-      "~> 4.0"
-    ],
-    "FBSDKCoreKit": [
-
-    ],
-    "FBSDKLoginKit": [
-
-    ],
-    "FBSDKShareKit": [
-
-    ],
-    "IQKeyboardManager": [
-
-    ],
     "ReachabilitySwift": [
       "~> 3"
     ],

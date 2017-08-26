@@ -1,34 +1,9 @@
 PODS:
-  - AsyncSwift (2.0.1)
-  - Bolts (1.8.4):
-    - Bolts/AppLinks (= 1.8.4)
-    - Bolts/Tasks (= 1.8.4)
-  - Bolts/AppLinks (1.8.4):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.8.4)
   - dvSection8 (1.0.0):
-    - AsyncSwift
-    - FBSDKCoreKit
-    - FBSDKLoginKit
-    - FBSDKShareKit
     - HTTPStatusCodes (~> 3.1.2)
-    - IQKeyboardManager
-    - JSONCodable (~> 3.0.1)
     - ReachabilitySwift (~> 3)
-    - SDWebImage (~> 4.0)
-  - FBSDKCoreKit (4.25.0):
-    - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.25.0):
-    - FBSDKCoreKit
-  - FBSDKShareKit (4.25.0):
-    - FBSDKCoreKit
   - HTTPStatusCodes (3.1.2)
-  - IQKeyboardManager (4.0.11)
-  - JSONCodable (3.0.1)
   - ReachabilitySwift (3)
-  - SDWebImage (4.1.0):
-    - SDWebImage/Core (= 4.1.0)
-  - SDWebImage/Core (4.1.0)
 
 DEPENDENCIES:
   - dvSection8 (from `../`)
@@ -38,17 +13,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  dvSection8: 8b78240bd741787edce0362b1ca29dbcc4013e7c
-  FBSDKCoreKit: 53e3f4bfb64e80c5f229dd30ae33ff57fbbbd2d1
-  FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
-  FBSDKShareKit: aea699d3cac749af08e360f4e949b82ffa8813f5
+  dvSection8: a47c34591993acb85d6599829efa4ee3a97f41f6
   HTTPStatusCodes: 88155ba36826366a898a7b4f34d311f49083d546
-  IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
-  JSONCodable: bd8616ae881befe2b82fbbf56d98b2dd377ac662
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
-  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
 
 PODFILE CHECKSUM: efb78a425ad56422c3104860b6ae29e89fe46fa4
 
