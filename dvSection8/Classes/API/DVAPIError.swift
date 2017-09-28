@@ -21,8 +21,8 @@ public enum APIErrorCode {
     case noInternet
 }
 
-struct DVAPIError {
-    static func urlErrorDomain(_ error: NSError) -> APIErrorCode {
+public struct DVAPIError {
+    static public func urlErrorDomain(_ error: NSError) -> APIErrorCode {
         var apiError: APIErrorCode!
         switch error.code {
         // Invalid URL
@@ -80,7 +80,7 @@ struct DVAPIError {
         return apiError
     }
 
-    static func responseStatus(_ response: HTTPURLResponse) -> APIErrorCode? {
+    static public func responseStatus(_ response: HTTPURLResponse) -> APIErrorCode? {
         var apiError: APIErrorCode?
         switch response.statusCodeEnum {
         case .ok: apiError = nil

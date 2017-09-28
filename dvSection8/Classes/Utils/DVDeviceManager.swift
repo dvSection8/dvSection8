@@ -9,10 +9,13 @@
 import UIKit
 
 public struct DVDeviceManager {
+    
+    public static let shared = DVDeviceManager()
+    
     // get model
     public let model = UIDevice().model
     // get platform
-    public let platform = UIDevice().systemName
+    public let platform = UIDevice().systemName.lowercased()
     // get platform version
     public let platformVersion = UIDevice().systemVersion
     // get deviceid or uuid

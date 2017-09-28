@@ -15,8 +15,8 @@ public enum iTunesLookUp: String {
 
 public struct DVForceUpdate {
     var api :DVAPI?
-    var itunesID: String?
-    var lookUpTerritory: String?
+    var itunesID: String? = nil
+    var lookUpTerritory: String? = nil
     
     public init(itunesID id: String?, lookUp: iTunesLookUp) {
         self.api = DVAPI()
