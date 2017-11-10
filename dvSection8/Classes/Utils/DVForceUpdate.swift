@@ -10,15 +10,15 @@ import Foundation
 
 public enum iTunesLookUp: String {
     case ph = "http://itunes.apple.com/ph/lookup?id="
-    case us = "http://itunes.apple.com/lookup?id="
+    case all = "http://itunes.apple.com/lookup?id="
 }
 
 public struct DVForceUpdate {
     var api :DVAPI?
-    var itunesID: String? = nil
+    var itunesID: Any? = nil
     var lookUpTerritory: String? = nil
     
-    public init(itunesID id: String?, lookUp: iTunesLookUp) {
+    public init(itunesID id: Any?, territory lookUp: iTunesLookUp) {
         self.api = DVAPI()
         self.itunesID = id
         self.lookUpTerritory = lookUp.rawValue
@@ -26,7 +26,7 @@ public struct DVForceUpdate {
     
     /**
      Set content-type in HTTP header
-    */
+     */
     fileprivate func contentType() -> String {
         let boundaryConstant = "----------V2ymHFg03esomerandomstuffhbqgZCaKO6jy";
         let contentType = "multipart/form-data; boundary=" + boundaryConstant
@@ -44,7 +44,7 @@ public struct DVForceUpdate {
     
     /**
      This function will result block for lookup itunes api to get the json data
-    */
+     */
     fileprivate func lookupApplicationBy(success: @escaping ResponseSuccessBlock,
                                          failed: @escaping ResponseFailedBlock) {
         let requests = self.requests()
@@ -55,10 +55,10 @@ public struct DVForceUpdate {
         })
     }
     
-    /** 
+    /**
      This function will result block for app store version
-    */
-    public func getAppStoreVersion(_ value: @escaping (JSONDictionary) -> ()) {
+     */
+    public func getAppStoreDetails(_ value: @escaping (JSONDictionary) -> (), failed: @escaping () -> ()) {
         lookupApplicationBy(success: { (results) in
             if let results = results["results"] as? [Any] {
                 if results.count > 0 {
@@ -71,11 +71,11 @@ public struct DVForceUpdate {
         }
     }
     
-    /** 
+    /**
      check the current app store version and current installed app version
-    */
+     */
     public func checkAppVersion(_ update: @escaping () -> ()) {
-        getAppStoreVersion { (result) in
+        getAppStoreDetails({ (result) in
             // get installed app version
             if let appStoreVersion = result["version"] as? String {
                 let deviceAppVersion = DVDeviceManager().appVersion
@@ -98,6 +98,8 @@ public struct DVForceUpdate {
                     update()
                 }
             }
+        }) {
+            // Failed
         }
     }
 }

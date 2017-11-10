@@ -79,7 +79,7 @@ public struct DVAPIError {
         }
         return apiError
     }
-
+    
     static public func responseStatus(_ response: HTTPURLResponse) -> APIErrorCode? {
         var apiError: APIErrorCode?
         switch response.statusCodeEnum {
@@ -110,3 +110,4 @@ public struct DVAPIError {
         return apiError
     }
 }
+
