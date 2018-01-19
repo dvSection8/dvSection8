@@ -1,6 +1,5 @@
 import UIKit
 import XCTest
-import dvSection8
 
 class Tests: XCTestCase {
     

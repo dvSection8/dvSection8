@@ -67,7 +67,7 @@ public class DVAPI: NSObject {
         return _urlRequest
     }
 
-    private func dataRequest(_ urlRequest: URLRequest,
+    public func dataRequest(_ urlRequest: URLRequest,
                                  success: @escaping ResponseSuccessBlock,
                                  failed: @escaping ResponseFailedBlock) {
 
