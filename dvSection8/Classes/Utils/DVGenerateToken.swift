@@ -7,9 +7,18 @@
 
 import Foundation
 
-public struct DVGenerateToken {
+public class DVGenerateToken: NSObject {
+
+    public class var shared : DVGenerateToken {
+        struct Static {
+            static let instance : DVGenerateToken = DVGenerateToken()
+        }
+        return Static.instance
+    }
     
-    public static let shared = DVGenerateToken()
+    private lazy var api: DVAPI = {
+        return DVAPI()
+    }()
     
     // Generate Bearer Token
     public func generateToken(_ url: URL?, key: String, secret: String, success: @escaping (JSONDictionary) -> (), failed: @escaping (APIErrorCode) -> ()) {
@@ -19,7 +28,7 @@ public struct DVGenerateToken {
         _urlRequest.allowsCellularAccess = true
         _urlRequest.httpBody = dataEncodedFrom(key: key, secret: key)
         
-        DVAPI().dataRequest(_urlRequest, success: { (response) in
+        self.api.dataRequest(_urlRequest, success: { (response) in
             success(response)
         }) { (errorCode) in
             failed(errorCode)

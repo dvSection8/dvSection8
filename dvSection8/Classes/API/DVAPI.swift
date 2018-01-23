@@ -17,7 +17,7 @@ public enum HTTPMethod: String {
 
 public class DVAPI: NSObject {
 
-    fileprivate let session :URLSession?
+    private let session :URLSession?
     fileprivate var reachability :Reachability?
 
     override public init() {
@@ -36,20 +36,28 @@ public class DVAPI: NSObject {
 
         if self.canConnect() {
             guard let _ = requests.url else {
-                failed(.invalidURL)
+                DispatchQueue.main.async {
+                    failed(.invalidURL)
+                }
                 return
             }
 
             let urlRequest = self.urlRequest(requests)
             
             self.dataRequest(urlRequest, success: { (result) in
-                success(result)
+                DispatchQueue.main.async {
+                    success(result)
+                }
             }) { (error) in
-                failed(error)
+                DispatchQueue.main.async {
+                    failed(error)
+                }
             }
         }
         else {
-            failed(.noInternet)
+            DispatchQueue.main.async {
+                failed(.noInternet)
+            }
         }
 
     }
@@ -71,42 +79,56 @@ public class DVAPI: NSObject {
                                  success: @escaping ResponseSuccessBlock,
                                  failed: @escaping ResponseFailedBlock) {
 
-        var task: URLSessionTask?
-        task = self.session?.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
-
-            guard let data = data, error == nil else {
-                // failed
-                if let _error = error as NSError? {
-                    let apiError = DVAPIError.urlErrorDomain(_error)
-                    failed(apiError)
-                    task?.cancel()
-                }
-                return
-            }
-
-            do {
-                guard let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONDictionary else {
+        DispatchQueue.global(qos: .utility).async { [weak self] in
+            
+            var task: URLSessionTask?
+            task = self?.session?.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+                
+                guard let data = data, error == nil else {
                     // failed
-                    if let httpResponse = response as? HTTPURLResponse, let errorCode = DVAPIError.responseStatus(httpResponse) {
-                        failed(errorCode)
-                        task?.cancel()
-                    } else {
-                        failed(.invalidData)
+                    if let _error = error as NSError? {
+                        let apiError = DVAPIError.urlErrorDomain(_error)
+                        DispatchQueue.main.async {
+                            failed(apiError)
+                        }
                         task?.cancel()
                     }
                     return
                 }
-                // success
-                success(jsonResult)
-            } catch {
-                // failed
-                failed(.invalidData)
-                task?.cancel()
-                return
-            }
-
-        })
-        task?.resume()
+                
+                do {
+                    guard let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? JSONDictionary else {
+                        // failed
+                        if let httpResponse = response as? HTTPURLResponse, let errorCode = DVAPIError.responseStatus(httpResponse) {
+                            DispatchQueue.main.async {
+                                failed(errorCode)
+                            }
+                            task?.cancel()
+                        } else {
+                            DispatchQueue.main.async {
+                                failed(.invalidData)
+                            }
+                            task?.cancel()
+                        }
+                        return
+                    }
+                    // success
+                    DispatchQueue.main.async {
+                        success(jsonResult)
+                    }
+                } catch {
+                    // failed
+                    DispatchQueue.main.async {
+                        failed(.invalidData)
+                    }
+                    task?.cancel()
+                    return
+                }
+                
+            })
+            task?.resume()
+            
+        }
     }
 
 }
