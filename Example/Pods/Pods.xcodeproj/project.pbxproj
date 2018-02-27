@@ -12,7 +12,7 @@
 		42A4500C617C487064A95AA98F4A3BC9 /* dvSection8-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AE70F51FFCC242F66E6B15C5D1898610 /* dvSection8-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		44EDC65C90BD5476A29E934E3A447DAB /* DVAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97275ABBC2634876053D3BB20FC2AF7 /* DVAPIError.swift */; };
 		47A5313DE5026FFC4AD62EBAD3638E42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515F3223B4F385C1052274758189362A /* UIKit.framework */; };
-		68D629477D3CB2BEBE2874FDAC4E5F7C /* DVForceUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4308D237FA75CA319720D6539BB3614F /* DVForceUpdate.swift */; };
+		68D629477D3CB2BEBE2874FDAC4E5F7C /* _DVForceUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4308D237FA75CA319720D6539BB3614F /* _DVForceUpdate.swift */; };
 		6AF60B6E1DCBBF15790D7A587BEBFD43 /* HTTPStatusCodes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0238CC552F324171EA5E764AB474FB /* HTTPStatusCodes.framework */; };
 		6FDED6AE3C83D57ED65E7D4E45465784 /* DVDeviceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA49694791510985C466DFA4925BA7F0 /* DVDeviceManager.swift */; };
 		7642CEB9240F6B509FE7726C2A3284CB /* HTTPStatusCodes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD11A76768792E24C1559A44DB6B38 /* HTTPStatusCodes+Extensions.swift */; };
@@ -37,6 +37,8 @@
 		E8F97ECF24F90C21A20EC8C3D509CCA3 /* Pods-dvSection8_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DC38AE5150BC6F98D68B19F44020E05 /* Pods-dvSection8_Example-dummy.m */; };
 		ED1D630A200EE2D900BFEB50 /* DVGenerateToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D6309200EE2D900BFEB50 /* DVGenerateToken.swift */; };
 		ED1D630C200EEA3800BFEB50 /* DVUploadFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D630B200EEA3700BFEB50 /* DVUploadFiles.swift */; };
+		ED36D0D3203E898E00291E7C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED36D0D2203E898E00291E7C /* Extensions.swift */; };
+		ED633736203E60CD009C67F1 /* DVForceUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633735203E60CD009C67F1 /* DVForceUpdate.swift */; };
 		F48AF7F179CC9C833E4A9C39AB754708 /* ReachabilitySwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CE7B3201BEA07CED0142F01CEE0F83 /* ReachabilitySwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +95,7 @@
 		2DC38AE5150BC6F98D68B19F44020E05 /* Pods-dvSection8_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dvSection8_Example-dummy.m"; sourceTree = "<group>"; };
 		32F12377E7717D20F45CE6CF24A7C681 /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
 		3E0D2AF20CAC93AE10FF82A39ABBA619 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
-		4308D237FA75CA319720D6539BB3614F /* DVForceUpdate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DVForceUpdate.swift; sourceTree = "<group>"; };
+		4308D237FA75CA319720D6539BB3614F /* _DVForceUpdate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = _DVForceUpdate.swift; sourceTree = "<group>"; };
 		456E8ABC02331FCDBCD6E0A7D483943B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		474D80D3969BC0000836E82A84FEFA22 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E7F6725D5FD1A82C1E9AC066551B5D3 /* Pods-dvSection8_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-dvSection8_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -136,6 +138,8 @@
 		EB2A11A9A45E494697F6847EE349EDDC /* Pods-dvSection8_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-dvSection8_Example.modulemap"; sourceTree = "<group>"; };
 		ED1D6309200EE2D900BFEB50 /* DVGenerateToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVGenerateToken.swift; sourceTree = "<group>"; };
 		ED1D630B200EEA3700BFEB50 /* DVUploadFiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVUploadFiles.swift; sourceTree = "<group>"; };
+		ED36D0D2203E898E00291E7C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ED633735203E60CD009C67F1 /* DVForceUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVForceUpdate.swift; sourceTree = "<group>"; };
 		EDCDDABD97F3F32BE1F03EB9A5EC057A /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		EDD74F9B93831A78A44898726A572170 /* Pods-dvSection8_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-dvSection8_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		FA5EA1FEE790E3D554BE23538940C1A7 /* ReachabilitySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,10 +316,12 @@
 			isa = PBXGroup;
 			children = (
 				AA49694791510985C466DFA4925BA7F0 /* DVDeviceManager.swift */,
-				4308D237FA75CA319720D6539BB3614F /* DVForceUpdate.swift */,
+				4308D237FA75CA319720D6539BB3614F /* _DVForceUpdate.swift */,
+				ED633735203E60CD009C67F1 /* DVForceUpdate.swift */,
 				E0A9973501F94DE0F0BB4BB773F88BD7 /* DVTypealias.swift */,
 				ED1D6309200EE2D900BFEB50 /* DVGenerateToken.swift */,
 				ED1D630B200EEA3700BFEB50 /* DVUploadFiles.swift */,
+				ED36D0D2203E898E00291E7C /* Extensions.swift */,
 			);
 			name = Utils;
 			path = dvSection8/Classes/Utils;
@@ -571,8 +577,10 @@
 				87FD696DB5E764EF9CE014257C47707A /* DVAPIRequests.swift in Sources */,
 				6FDED6AE3C83D57ED65E7D4E45465784 /* DVDeviceManager.swift in Sources */,
 				ED1D630C200EEA3800BFEB50 /* DVUploadFiles.swift in Sources */,
-				68D629477D3CB2BEBE2874FDAC4E5F7C /* DVForceUpdate.swift in Sources */,
+				ED36D0D3203E898E00291E7C /* Extensions.swift in Sources */,
+				68D629477D3CB2BEBE2874FDAC4E5F7C /* _DVForceUpdate.swift in Sources */,
 				AADE191B81A6EF09CBE930D0B59FAB2B /* dvSection8-dummy.m in Sources */,
+				ED633736203E60CD009C67F1 /* DVForceUpdate.swift in Sources */,
 				CC6E1CF14EBC53C7DCFD54FB6B28410A /* DVTypealias.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

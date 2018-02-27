@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import dvSection8
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        DVForceUpdate.shared.getAppStoreDetailsWith(territory: .all, appId: 582901861, success: { (response) in
+            print(response)
+        }) { (errorCode) in
+            print(errorCode)
+        }
+        
+        DVForceUpdate.shared.checkAppVersion(territory: .all, appId: 582901861) { (notes) in
+            print(notes)
+        }
     }
 
     override func didReceiveMemoryWarning() {

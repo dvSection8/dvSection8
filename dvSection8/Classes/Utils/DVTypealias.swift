@@ -16,4 +16,5 @@ public typealias Paremeters = [String: Any]
 public typealias HTTPHeaders = [String: String]
 public typealias ResponseSuccessBlock = (JSONDictionary) -> ()
 public typealias ResponseFailedBlock = (APIErrorCode) -> ()
+public typealias APIResponseBlock = (jsonResult: JSONDictionary, error: APIErrorCode)
 

@@ -1,107 +1,69 @@
 //
-//  AppVersion.swift
-//  Rush
+//  DVForceUpdate.swift
+//  dvSection8
 //
-//  Created by MJ Roldan on 31/07/2017.
-//  Copyright © 2017 Mark Joel Roldan. All rights reserved.
+//  Created by MJ Roldan on 22/02/2018.
 //
 
 import Foundation
 
-public enum iTunesLookUp: String {
-    case ph = "http://itunes.apple.com/ph/lookup?id="
-    case all = "http://itunes.apple.com/lookup?id="
+public enum Territories: String {
+    case ph = "ph/"
+    case all = ""
 }
 
-public struct DVForceUpdate {
-    var api :DVAPI?
-    var itunesID: Any? = nil
-    var lookUpTerritory: String? = nil
+public class DVForceUpdate: NSObject {
     
-    public init(itunesID id: Any?, territory lookUp: iTunesLookUp) {
-        self.api = DVAPI()
-        self.itunesID = id
-        self.lookUpTerritory = lookUp.rawValue
+    public class var shared: DVForceUpdate {
+        struct Static {
+            static let instance: DVForceUpdate = DVForceUpdate()
+        }
+        return Static.instance
     }
     
-    /**
-     Set content-type in HTTP header
-     */
-    fileprivate func contentType() -> String {
-        let boundaryConstant = "----------V2ymHFg03esomerandomstuffhbqgZCaKO6jy";
-        let contentType = "multipart/form-data; boundary=" + boundaryConstant
-        return contentType
-    }
+    private lazy var api: DVAPI = {
+        return DVAPI()
+    }()
     
-    /**
-     This function will requests for lookup itunes api
-     */
-    fileprivate func requests() -> DVAPIRequests {
-        let url = URL(string: "\(self.lookUpTerritory ?? "")" + "\(self.itunesID ?? "")")
-        let headers = ["content-Type": contentType()]
-        return DVAPIRequests(.post, url: url, parameters: nil, headers: headers)
-    }
-    
-    /**
-     This function will result block for lookup itunes api to get the json data
-     */
-    fileprivate func lookupApplicationBy(success: @escaping ResponseSuccessBlock,
-                                         failed: @escaping ResponseFailedBlock) {
-        let requests = self.requests()
-        self.api?.request(requests, success: { (results) in
-            success(results)
-        }, failed: { (errorCode) in
-            failed(errorCode)
-        })
-    }
-    
-    /**
-     This function will result block for app store version
-     */
-    public func getAppStoreDetails(_ value: @escaping (JSONDictionary) -> (), failed: @escaping () -> ()) {
-        lookupApplicationBy(success: { (results) in
-            if let results = results["results"] as? [Any] {
-                if results.count > 0 {
-                    if let dict = results[0] as? JSONDictionary {
-                        value(dict)
-                    }
-                }
-            }
+    public func getAppStoreDetailsWith(territory: Territories, appId: Any,
+                                       success: @escaping ResponseSuccessBlock,
+                                       failed: @escaping ResponseFailedBlock) {
+        
+        let url = URL(string: "https://itunes.apple.com/\(territory.rawValue)lookup?id=\(appId)")
+        let requests = DVAPIRequests(.get, url: url)
+        
+        self.api.request(requests, success: { (response) in
+            success(response)
         }) { (errorCode) in
+            failed(errorCode)
         }
     }
     
-    /**
-     check the current app store version and current installed app version
-     */
-    public func checkAppVersion(_ update: @escaping () -> ()) {
-        getAppStoreDetails({ (result) in
-            // get installed app version
-            if let appStoreVersion = result["version"] as? String {
-                let deviceAppVersion = DVDeviceManager().appVersion
-                print("appStoreVersion: \(appStoreVersion), deviceAppVersion: \(deviceAppVersion)")
-                // get each version number
-                let asvComponents = appStoreVersion.components(separatedBy: ".")
-                let davComponents = deviceAppVersion.components(separatedBy: ".")
-                var isOutOfVersion = false
-                // check if current app store version and app version has not equal
-                for v in 0..<min(asvComponents.count, davComponents.count) {
-                    let asv :String = asvComponents[v]
-                    let dav :String = davComponents[v]
-                    if asv != dav {
-                        isOutOfVersion = (dav < asv)
-                        break
+    public func checkAppVersion(territory: Territories, appId: Any, success: @escaping (String) -> ()) {
+        
+        self.getAppStoreDetailsWith(territory: territory,
+                                    appId: appId,
+                                    success: { (response) in
+            
+            guard let results = response["results"] as? [JSONDictionary] else {
+                return
+            }
+            
+            if results.count > 0 {
+                
+                let version : String = results.first?["version"] as? String ?? ""
+                let releaseNotes : String = results.first?["releaseNotes"] as? String ?? ""
+                let localVersion : String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
+                
+                if version.compare(localVersion) == ComparisonResult.orderedDescending {
+                    DispatchQueue.main.async {
+                        success(releaseNotes)
                     }
                 }
-                // the app version is out to date
-                if isOutOfVersion {
-                    update()
-                }
             }
-        }) {
-            // Failed
+            
+        }) { (errorCode) in
+            
         }
     }
 }
-
-

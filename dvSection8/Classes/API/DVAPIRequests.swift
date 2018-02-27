@@ -14,7 +14,7 @@ public struct DVAPIRequests {
     var parameters: Paremeters? = nil
     var headers: HTTPHeaders? = nil
     
-    public init(_ method: HTTPMethod, url: URL? = nil, parameters: Paremeters? = nil, headers: HTTPHeaders? = nil) {
+    public init(_ method: HTTPMethod, url: URL?, parameters: Paremeters? = nil, headers: HTTPHeaders? = nil) {
         self.method = method
         self.url = url
         self.parameters = parameters

@@ -13,15 +13,15 @@ public struct DVDeviceManager {
     public static let shared = DVDeviceManager()
     
     // get model
-    public let model = UIDevice().model
+    public static let model = UIDevice().model
     // get platform
-    public let platform = UIDevice().systemName.lowercased()
+    public static let platform = UIDevice().systemName.lowercased()
     // get platform version
-    public let platformVersion = UIDevice().systemVersion
+    public static let platformVersion = UIDevice().systemVersion
     // get deviceid or uuid
-    public let deviceId = UIDevice.current.identifierForVendor?.uuidString ?? ""
+    public static let deviceId = UIDevice.current.identifierForVendor?.uuidString ?? ""
     // get device name from bundle
-    public var appName: String {
+    public static var appName: String {
         get {
             if let bundle = Bundle.main.infoDictionary,
                 let appname = bundle["CFBundleDisplayName"] as? String {
@@ -31,7 +31,7 @@ public struct DVDeviceManager {
         }
     }
     // get app version from bundle
-    public var appVersion: String {
+    public static var appVersion: String {
         get {
             if let bundle = Bundle.main.infoDictionary,
                 let appversion = bundle["CFBundleShortVersionString"] as? String {
